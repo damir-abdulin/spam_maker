@@ -5,6 +5,9 @@
 # 23/05/2020
 
 import vk_api
+import colorama
+
+from colorama import Fore, Style
 
 import function as f
 
@@ -22,15 +25,19 @@ message = (
     )
 photo = 'photo598071478_457239148'
 
+# Для вывода цветного текста.
+colorama.init()
+
 groups = f.get_group(vk)
+groups = [46488455564995655656656596522488]
 for group in groups:
     try:
         post = vk.wall.post(owner_id=int(-(group)), message=message, attachments=photo)
-        print("Успешно отправлено")
-        print("Группа: " + vk.groups.getById(group_id = group)[0]["name"] + "")
+        print(Fore.GREEN + "Успешно отправлено")
+        print(Style.RESET_ALL + "Группа: " + vk.groups.getById(group_id = group)[0]["name"] + "")
         print("Пост: " + str(post["post_id"]))
         print("----------------")
     except:
-        print("Упс, что-то пошло не так.")
-        print("Группа: " + vk.groups.getById(group_id = group)[0]["name"] + "")
+        print(Fore.RED + "Упс, что-то пошло не так.")
+        print(Style.RESET_ALL + "Группа: " + vk.groups.getById(group_id = group)[0]["name"] + "")
         print("----------------")
