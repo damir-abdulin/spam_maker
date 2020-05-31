@@ -29,7 +29,6 @@ photo = 'photo598071478_457239148'
 colorama.init()
 
 groups = f.get_group(vk)
-groups = [46488455564995655656656596522488]
 for group in groups:
     try:
         post = vk.wall.post(owner_id=int(-(group)), message=message, attachments=photo)
