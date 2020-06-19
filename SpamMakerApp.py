@@ -5,7 +5,6 @@ import vk_api
 from PyQt5 import QtWidgets
 
 import design
-import function as func
 
 class SpamMakerApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
     ''' Класс GUI приложения, который наследуется от класса
