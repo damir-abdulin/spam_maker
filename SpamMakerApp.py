@@ -54,9 +54,6 @@ class SpamMakerApp(QtWidgets.QMainWindow, design.Ui_MainWindow):
         # Получаем id всех групп.
         groups = groups_full['items']
         
-        # Тестовые площадки.
-        groups = [195666952, 195660207]
-        
         return groups
         
     def send_post(self, text, photo, vk, groups):
